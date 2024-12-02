@@ -1,0 +1,22 @@
+{
+  "name": "blfood-web",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Nceco/blfood-web.git",
+  "author": "tangcong <tickoner@163.com>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.5.13",
+    "vue-router": "4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "vite": "^6.0.1"
+  }
+}
