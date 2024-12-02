@@ -1,10 +1,8 @@
 <script setup>
-import contentLayout from '@/layout/contentLayout.vue'
 </script>
-
 <template>
-  <content-layout/>
+  <div>service</div>
 </template>
-
 <style scoped lang="less">
+
 </style>
