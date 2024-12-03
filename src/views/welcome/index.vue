@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { useRouter } from "vue-router";
 import { LAYOUT_MENU } from "@/utils/common.js";
+import Bottom from "@/components/Bottom.vue";
 
 const router = useRouter()
 
@@ -31,9 +32,10 @@ const handleNavClick = item => {
         </div>
       </div>
     </div>
-    <div>
+    <div style="height: 1000px">
       首页内容
     </div>
+    <Bottom/>
   </div>
 </template>
 

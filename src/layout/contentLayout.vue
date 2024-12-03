@@ -1,5 +1,5 @@
 <script setup>
-import {onMounted, ref} from 'vue'
+import {onMounted, ref, watch} from 'vue'
 import { useRouter, useRoute } from "vue-router";
 import { LAYOUT_MENU } from "@/utils/common.js";
 
@@ -15,9 +15,8 @@ const handleNavClick = (item) => {
     path: item.path
   })
 }
-onMounted(() => {
-  currentRoute.value = route.name
-})
+onMounted(() => {currentRoute.value = route.name})
+watch(route,() => currentRoute.value = route.name)
 </script>
 
 <template>

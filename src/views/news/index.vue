@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { NEWS_SUB_MENU } from "@/utils/common.js";
+import Bottom from "@/components/Bottom.vue";
 const router = useRouter()
 
 const sub_menu = ref(NEWS_SUB_MENU)
@@ -25,6 +26,7 @@ const handleSubMenuClick = (item,index) => {
         {{item.name}}
       </div>
     </div>
+    <Bottom/>
   </div>
 </template>
 <style scoped lang="less">
