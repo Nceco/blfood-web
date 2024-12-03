@@ -32,7 +32,7 @@ const handleNavClick = item => {
       </div>
     </div>
     <div>
-      <router-view/>
+      首页内容
     </div>
   </div>
 </template>
