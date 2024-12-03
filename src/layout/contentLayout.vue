@@ -1,19 +1,23 @@
 <script setup>
-import { ref } from 'vue'
-import { useRouter } from "vue-router";
+import {onMounted, ref} from 'vue'
+import { useRouter, useRoute } from "vue-router";
 import { LAYOUT_MENU } from "@/utils/common.js";
 
 const router = useRouter()
+const route = useRoute()
 
 const menu = ref(LAYOUT_MENU)
-const currentIndex = ref(0)
+const currentRoute = ref('news')
 const goToHome = () => router.push('/')
-const handleNavClick = (item,index) => {
-  currentIndex.value = index
+const handleNavClick = (item) => {
+  currentRoute.value = item.path
   router.push({
     path: item.path
   })
 }
+onMounted(() => {
+  currentRoute.value = route.name
+})
 </script>
 
 <template>
@@ -24,10 +28,10 @@ const handleNavClick = (item,index) => {
       </div>
       <div class="nav">
         <div
-            v-for="(item,index) in menu"
+            v-for="item in menu"
             :key="item.path"
-            :class="{'nav_item': true,'current': currentIndex === index}"
-            @click="() => handleNavClick(item,index)"
+            :class="{'nav_item': true,'current': currentRoute === item.path}"
+            @click="() => handleNavClick(item)"
         >
           {{item.name}}
         </div>

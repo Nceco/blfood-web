@@ -13,11 +13,11 @@ export const LAYOUT_MENU = [
     },
     {
         name: '採用情報',
-        path: ''
+        path: 'a'
     },
     {
         name: 'トレタのnote',
-        path: ''
+        path: 'b'
     },
     {
         name: 'お問い合わせ',

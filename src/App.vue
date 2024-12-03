@@ -1,9 +1,8 @@
 <script setup>
-import contentLayout from '@/layout/contentLayout.vue'
 </script>
 
 <template>
-  <content-layout/>
+  <router-view/>
 </template>
 
 <style scoped lang="less">
