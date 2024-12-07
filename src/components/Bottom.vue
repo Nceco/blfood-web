@@ -30,6 +30,7 @@ const handleNavClick = item => router.replace(item.path)
 <style lang="less" scoped>
 @import "../global.less";
 .layout_bottom{
+  padding-top: 160px;
   .img{
     width: 100%;
     height: 200px;

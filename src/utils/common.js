@@ -1,27 +1,31 @@
 export const LAYOUT_MENU = [
     {
-        name: 'お知らせ',
-        path: 'news'
-    },
-    {
         name: '企業情報',
-        path: 'company'
+        path: '/about'
     },
     {
         name: 'サービス紹介',
-        path: 'service'
+        path: '/service'
+    },
+    {
+        name: 'お知らせ',
+        path: '/news'
     },
     {
         name: '採用情報',
-        path: 'a'
+        path: '/recruit'
     },
     {
-        name: 'トレタのnote',
-        path: 'b'
+        name: '導入事例',
+        path: '/achievement'
+    },
+    {
+        name: 'よくある質問',
+        path: '/qa'
     },
     {
         name: 'お問い合わせ',
-        path: 'contact'
+        path: '/contact'
     }
 ]
 
@@ -73,4 +77,19 @@ export const COMPANY_SUB_MENU = [
         name: '一般事業主行動計画',
         path: 'service'
     }
+]
+
+export const ABOUT_SUB_MENU = [
+    {
+        name: 'ビジョン',
+        path: '/about'
+    },
+    {
+        name: '代表あいさつ',
+        path: '/about/message'
+    },
+    {
+        name: '企業情報',
+        path: '/about/company'
+    },
 ]

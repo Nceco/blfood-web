@@ -32,8 +32,8 @@ const handleNavClick = item => {
         </div>
       </div>
     </div>
-    <div style="height: 1000px">
-      首页内容
+    <div style="height: 1000px;text-align: center">
+      <h1>首页内容</h1>
     </div>
     <Bottom/>
   </div>

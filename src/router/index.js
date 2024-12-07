@@ -12,24 +12,60 @@ export const routes = [
         component: () => import('@/layout/contentLayout.vue'),
         children: [
             {
-                path:'/news',
-                name:'news',
-                component: () => import('@/views/news/index.vue'),
-            },
-            {
-                path:'/company',
-                name:'company',
-                component: () => import('@/views/company/index.vue'),
-            },
-            {
-                path:'/contact',
-                name:'contact',
-                component: () => import('@/views/contact/index.vue'),
+                path:'/about',
+                name:'about',
+                component: () => import('@/views/about/index.vue'),
+                children:[
+                    {
+                        path: '',
+                        name: 'vision',
+                        component: () => import('@/views/about/vision/index.vue'),
+                        parent: 'about'
+                    },
+                    {
+                        path: 'message',
+                        name: 'message',
+                        component:  () => import('@/views/about/message/index.vue'),
+                        parent: 'about'
+                    },
+                    {
+                        path: 'company',
+                        name: 'company',
+                        component:  () => import('@/views/about/company/index.vue'),
+                        parent: 'about'
+                    },
+                ]
+
             },
             {
                 path:'/service',
                 name:'service',
                 component: () => import('@/views/service/index.vue'),
+            },
+            {
+                path:'/news',
+                name:'news',
+                component: () => import('@/views/news/index.vue'),
+            },
+            {
+                path:'/recruit',
+                name:'recruit',
+                component: () => import('@/views/recruit/index.vue'),
+            },
+            {
+                path:'/achievement',
+                name:'achievement',
+                component: () => import('@/views/achievement/index.vue'),
+            },
+            {
+                path:'/qa',
+                name:'qa',
+                component: () => import('@/views/qa/index.vue'),
+            },
+            {
+                path:'/contact',
+                name:'contact',
+                component: () => import('@/views/contact/index.vue'),
             }
         ]
     },

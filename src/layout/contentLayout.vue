@@ -15,8 +15,8 @@ const handleNavClick = (item) => {
     path: item.path
   })
 }
-onMounted(() => {currentRoute.value = route.name})
-watch(route,() => currentRoute.value = route.name)
+onMounted(() => {currentRoute.value = route.fullPath})
+watch(route,() => currentRoute.value = route.fullPath)
 </script>
 
 <template>
@@ -29,7 +29,7 @@ watch(route,() => currentRoute.value = route.name)
         <div
             v-for="item in menu"
             :key="item.path"
-            :class="{'nav_item': true,'current': currentRoute === item.path}"
+            :class="{'nav_item': true,'current': currentRoute.includes(item.path)}"
             @click="() => handleNavClick(item)"
         >
           {{item.name}}
