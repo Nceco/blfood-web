@@ -37,6 +37,7 @@ const handleNavClick = item => {
     <div class="content">
       <h1>首页内容</h1>
     </div>
+    <Bottom/>
   </div>
 </template>
 
@@ -100,6 +101,7 @@ const handleNavClick = item => {
 }
 .content{
   padding: 1rem 2.5rem 0;
+  height: 100vh;
 }
 @media screen and (min-width:991px) {
   .container-fluid{
