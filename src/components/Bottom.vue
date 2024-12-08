@@ -63,4 +63,34 @@ const handleNavClick = item => router.replace(item.path)
   }
 }
 
+@media screen and (max-width:991px) {
+  .layout_bottom{
+    padding-top: 48px;
+    .nav{
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      padding: 0;
+      &_item{
+        color: @text_color;
+        cursor: pointer;
+        margin-left: 1rem;
+        font-size: .8125rem;
+        &:hover{
+          color: @primary_color;
+        }
+      }
+    }
+    .copyright{
+      text-align: center;
+      margin: 2rem 0 3rem 0;
+      small{
+        color: #999;
+      }
+    }
+  }
+}
+
 </style>

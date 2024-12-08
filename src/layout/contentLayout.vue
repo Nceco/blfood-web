@@ -99,11 +99,6 @@ watch(route,() => currentRoute.value = route.fullPath)
     z-index: 999;
   }
 }
-.current{
-    &:after,&:before{
-      width: 50%;
-    }
-  }
 .mian_layout{
     padding-top: 56px;
 }
@@ -116,6 +111,11 @@ watch(route,() => currentRoute.value = route.fullPath)
   }
   .mian_layout{
     padding-top: 6rem;
+  }
+  .current{
+    &:after,&:before{
+      width: 50%;
+    }
   }
 }
 </style>

@@ -16,8 +16,8 @@ const handleSubMenuClick = (item,index) => {
 
 </script>
 <template>
-  <div class="container">
-    <div class="header">
+  <div class="mu_container">
+    <div class="mu_header">
       <div
           v-for="(item,index) in sub_menu"
           :key="item.path"
@@ -35,12 +35,13 @@ const handleSubMenuClick = (item,index) => {
 </template>
 <style scoped lang="less">
 @import "../../global.less";
-.container{
-  .header{
+.mu_container{
+  .mu_header{
     background: @primary_color;
     display: flex;
     align-items: center;
     justify-content: center;
+    min-width: 200px;
     .sub_item{
       padding: 1.0625rem 0;
       color: @white_color;
@@ -64,6 +65,16 @@ const handleSubMenuClick = (item,index) => {
       border-color: transparent transparent #fff;
       border-style: solid;
       border-width: 0 .3125rem .25rem;
+    }
+  }
+}
+@media screen and (max-width:991px) {
+  .mu_container{
+    .mu_header{
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 1rem;
     }
   }
 }

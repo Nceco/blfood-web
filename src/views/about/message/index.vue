@@ -1,8 +1,8 @@
 <script setup>
 </script>
 <template>
-  <div class="box">
-    <div class="header">
+  <div class="mu_box">
+    <div class="mu_header">
       <span class="span1">MESSAGE</span>
       <span class="span2">代表あいさつ</span>
     </div>
@@ -15,8 +15,9 @@
   </div>
 </template>
 <style scoped lang="less">
-.box{
-  .header{
+.mu_box{
+  padding: 0 24rem;
+  .mu_header{
     padding: 4rem 0 2.5rem;
     display: flex;
     flex-direction: column;
@@ -34,11 +35,44 @@
     }
   }
   .content{
-    margin-left: 16%;
-    max-width: 960px;
+    text-align: left;
     p{
       line-height: 1.875rem;
-      font-size: 14px;
+      font-size: 0.9375rem;
+    }
+  }
+}
+@media screen and (max-width:1500px) {
+  .mu_box{
+    padding: 0 6rem;
+  }
+}
+@media screen and (max-width:991px) {
+  .mu_box{
+    padding: 0 1rem;
+    .mu_header{
+      padding: 2rem 0 1.5rem;
+      text-align: center;
+      .span1{
+        margin-bottom: 1.5rem;
+        display: block;
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1.3;
+        letter-spacing: .4rem;
+      }
+      .title{
+        font-size: 1.5rem;
+        font-family: Roboto Condensed, sans-serif;
+        font-weight: 700;
+        line-height: 1.5;
+        text-align: center;
+      }
+    }
+    .content{
+      p{
+        font-size: 0.875rem;
+      }
     }
   }
 }

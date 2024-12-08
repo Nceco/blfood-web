@@ -1,8 +1,8 @@
 <script setup>
 </script>
 <template>
-  <div class="box">
-    <div class="header">
+  <div class="mu_box">
+    <div class="mu_header">
       <span class="span1">COMPANY</span>
       <span class="span2">企業情報</span>
     </div>
@@ -61,8 +61,9 @@
   </div>
 </template>
 <style scoped lang="less">
-.box{
-  .header{
+.mu_box{
+  padding: 0 24rem;
+  .mu_header{
     padding: 4rem 0 2.5rem;
     display: flex;
     flex-direction: column;
@@ -80,7 +81,6 @@
     }
   }
   .content{
-    margin-left: 16%;
     .item{
       display: flex;
       flex-direction: row;
@@ -89,12 +89,57 @@
       &_1{
         width: 220px;
         padding: 20px 0;
-        font-size: 15px;
+        font-size: 0.9375rem;
         font-weight: 700;
       }
       &_2{
         padding: 20px 0;
-        font-size: 15px;
+        font-size: 0.9375rem;
+      }
+    }
+  }
+}
+@media screen and (max-width:1500px) {
+  .mu_box{
+    padding: 0 6rem;
+  }
+}
+@media screen and (max-width:991px) {
+  .mu_box{
+    padding: 0 1rem;
+    .mu_header{
+      padding: 2rem 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .span1{
+        display: block;
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1.3;
+        letter-spacing: .4rem;
+      }
+      .span2{
+        font-size: .7125rem;
+      }
+    }
+    .content{
+      .item{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        border-bottom: 1px solid #e8ebee;
+        &_1{
+          width: 220px;
+          padding: 14px 0;
+          font-size: 0.875rem;
+          font-weight: 700;
+        }
+        &_2{
+          padding: 0 0 14px 0;
+          font-size: 0.875rem;
+        }
       }
     }
   }
