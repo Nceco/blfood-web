@@ -20,22 +20,24 @@ watch(route,() => currentRoute.value = route.fullPath)
 </script>
 
 <template>
-  <div class="main_layout">
-    <div class="header">
-      <div class="logo" @click="goToHome">
-        <span class="logo_title">Bridge Land</span>
-      </div>
-      <div class="nav">
-        <div
-            v-for="item in menu"
-            :key="item.path"
-            :class="{'nav_item': true,'current': currentRoute.includes(item.path)}"
-            @click="() => handleNavClick(item)"
-        >
-          {{item.name}}
+  <div class="mian_layout">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <div class="logo" @click="goToHome">
+            <span class="logo_title">Bridge Land</span>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li v-for="item in menu" :key="item.path" @click="() => handleNavClick(item)" :class="{'nav-item': true,'current': currentRoute.includes(item.path)}">
+              <span class="nav-link active" aria-current="page">{{item.name}}</span>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
+    </nav>
     <div>
       <router-view/>
     </div>
@@ -44,72 +46,76 @@ watch(route,() => currentRoute.value = route.fullPath)
 
 <style scoped lang="less">
 @import "../global.less";
-.main_layout{
+.container-fluid .logo .logo_title{
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: @primary_color;
+}
+
+.navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background-color: #fff !important;
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, .07);
+}
+
+.navbar-collapse{
+  justify-content: flex-end;
+}
+
+.navbar-nav{
   position: relative;
-  padding-top: 6.1rem;
-  .header{
-    position: fixed;
-    top: 0;
-    left: 0;
+}
+
+.nav-item{
+  cursor: pointer;
+  position: relative;
+  margin-left: 1rem;
+  font-size: .9375rem;
+  font-weight: 700;
+  &:hover{
+    &::after,&::before{
+      width: 50%;
+    }
+  }
+  &::before{
+    left: 50%;
+  }
+  &::after{
+    right: 50%;
+  }
+  &::before,&::after{
+    display: block;
+    position: absolute;
+    width:0;
+    height: 2px;
+    background: @text_color;
+    content: "";
+    bottom: -2px;
+    transition: .3s;
+    z-index: 999;
+  }
+}
+.current{
+    &:after,&:before{
+      width: 50%;
+    }
+  }
+.mian_layout{
+    padding-top: 56px;
+}
+@media screen and (min-width:991px) {
+  .container-fluid{
     padding: 0 2.5rem;
+  }
+  .navbar{
     height: 6rem;
-    width: 100vw;
-    background: @white_color;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    .logo{
-      &_title{
-        font-size: 1.2rem;
-        font-weight: bold;
-        color: @primary_color;
-      }
-      &:hover{
-        cursor: pointer;
-      }
-    }
-    .nav{
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      &_item{
-        margin-left: 2.5rem;
-        position: relative;
-        font-weight: 700;
-        color: @text_color;
-        font-size: .9375rem;
-        &:hover{
-          cursor: pointer;
-          &::after,&::before{
-            width: 50%;
-          }
-        }
-        &::before{
-          left: 50%;
-        }
-        &::after{
-          right: 50%;
-        }
-        &::before,&::after{
-          display: block;
-          position: absolute;
-          width: 0;
-          height: 2px;
-          background: @text_color;
-          content: "";
-          bottom: -12px;
-          transition: .3s;
-          z-index: 999;
-        }
-      }
-      .current{
-        &:after,&:before{
-          width: 50%;
-        }
-      }
-    }
+  }
+  .mian_layout{
+    padding-top: 6rem;
   }
 }
 </style>
