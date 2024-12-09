@@ -2,8 +2,8 @@
 import Bottom from "@/components/Bottom.vue";
 </script>
 <template>
-  <div class="box">
-    <div class="header">
+  <div class="mu_box">
+    <div class="mu_header">
       <span class="span1">Q＆A</span>
       <span class="span2">よくある質問</span>
     </div>
@@ -121,14 +121,14 @@ import Bottom from "@/components/Bottom.vue";
         </div>
       </div>
     </div>
-    <Bottom/>
   </div>
+  <Bottom/>
 </template>
 <style scoped lang="less">
 @import "../../global.less";
-.box {
-  padding: 0 5rem;
-  .header {
+.mu_box {
+  padding: 0 24rem;
+  .mu_header {
     padding: 4rem 0 2.5rem;
     display: flex;
     flex-direction: column;
@@ -152,7 +152,7 @@ import Bottom from "@/components/Bottom.vue";
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-left: 28%;
+    // margin-left: 28%;
     .item{
       display: flex;
       flex-direction: column;
@@ -175,6 +175,50 @@ import Bottom from "@/components/Bottom.vue";
         font-size: 1.2rem;
         font-weight: 700;
         margin-bottom: .5rem;
+      }
+    }
+  }
+}
+@media screen and (max-width:2000px) {
+  .mu_box {
+    padding: 0 12rem;
+  }
+}
+@media screen and (max-width:1500px) {
+  .mu_box {
+    padding: 0 6rem;
+  }
+}
+@media screen and (max-width:991px) {
+  .mu_box {
+    padding: 0 1rem;
+    .mu_header {
+      padding: 2rem 0 1.5rem;
+      .span1 {
+        font-size: 1.5rem;
+      }
+      .span2 {
+        font-size: .7125rem;
+      }
+    }
+    .content{
+      .item{
+        &_a{
+          margin-bottom: .4rem;
+          display: flex;
+          flex-direction: column;
+          .span2,.span2a{
+            font-size: .8125rem;
+            margin-bottom: .2rem;
+            padding-left: .5rem;
+          }
+          .span2a{
+            font-weight: 600;
+          }
+        }
+        .span1{
+          font-size: 1rem;
+        }
       }
     }
   }

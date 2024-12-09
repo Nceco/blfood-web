@@ -2,8 +2,8 @@
 import Bottom from "@/components/Bottom.vue";
 </script>
 <template>
-  <div class="box">
-    <div class="header">
+  <div class="mu_box">
+    <div class="mu_header">
       <span class="span1">SERVICE</span>
       <span class="span2">サービス紹介</span>
     </div>
@@ -103,8 +103,8 @@ import Bottom from "@/components/Bottom.vue";
   </div>
 </template>
 <style scoped lang="less">
-.box{
-  .header{
+.mu_box{
+  .mu_header{
     padding: 4rem 0 2.5rem;
     display: flex;
     flex-direction: column;
@@ -122,7 +122,7 @@ import Bottom from "@/components/Bottom.vue";
     }
   }
   .content{
-    margin-left: 8%;
+    padding: 0 12rem;
     .item{
       display: flex;
       flex-direction: row;
@@ -136,8 +136,9 @@ import Bottom from "@/components/Bottom.vue";
         font-weight: 400;
       }
       &_img{
-        width: 450px;
-        height: 244px;
+        flex: 1;
+        // width: 450px;
+        height: 420px;
         background: #e8ebee;
         cursor: pointer;
         transition: .3s;
@@ -146,7 +147,7 @@ import Bottom from "@/components/Bottom.vue";
         }
       }
       &_text{
-        width: 50%;
+        flex: 1.5;
         margin-left: 30px;
         &_title{
           font-size: 1.125rem;
@@ -159,6 +160,78 @@ import Bottom from "@/components/Bottom.vue";
           line-height: 1.875rem;
           font-size: 14px;
           margin: 0;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width:1500px) {
+  .mu_box{
+    .content{
+      padding: 0 6rem;
+    }
+  }
+}
+@media screen and (max-width:991px) {
+  .mu_box{
+    .mu_header{
+      padding: 2rem 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .span1{
+        display: block;
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1.3;
+        letter-spacing: .4rem;
+      }
+      .span2{
+        font-size: .7125rem;
+      }
+    }
+    .content{
+      padding: 0 1rem;
+      .item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0px;
+        margin-bottom: 5rem;
+        .cd{
+          margin-left: 0rem;
+          color: #999;
+          font-size: .75rem;
+          font-weight: 400;
+        }
+        &_img{
+          flex: none;
+          width: calc(100vw - 2rem);
+          height: 224px;
+          background: #e8ebee;
+          cursor: pointer;
+          transition: .3s;
+          &:hover{
+            box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2);
+          }
+        }
+        &_text{
+          flex: 1;
+          margin-left: 0px;
+          &_title{
+            font-size: 1.125rem;
+            font-weight: 700;
+            font-family: Roboto Condensed, sans-serif;
+            margin-top: .8rem;
+            margin-bottom: .5rem;
+          }
+          p{
+            line-height: 1.875rem;
+            font-size: 14px;
+            margin: 0;
+          }
         }
       }
     }
