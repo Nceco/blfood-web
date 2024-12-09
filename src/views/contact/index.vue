@@ -2,8 +2,8 @@
 import Bottom from "@/components/Bottom.vue";
 </script>
 <template>
-  <div class="box">
-    <div class="container">
+  <div class="mu_box">
+    <div class="mu_container">
       <div class="header">
         <span class="span1">CONTACT</span>
         <span class="span2">お問い合わせ</span>
@@ -112,14 +112,14 @@ import Bottom from "@/components/Bottom.vue";
         </div>
       </div>
     </div>
-    <Bottom/>
   </div>
+  <Bottom/>
 </template>
 <style scoped lang="less">
 @import "../../global.less";
-.box{
-  .container{
-    width: 60%;
+.mu_box{
+  padding: 0 36rem;
+  .mu_container{
     margin: 0 auto;
   }
   .header{
@@ -146,10 +146,11 @@ import Bottom from "@/components/Bottom.vue";
     margin-bottom: 2rem;
     line-height: 1.875rem;
     font-size: 14px;
-    margin-left: 16%;
+    text-align: center;
+    // margin-left: 16%;
   }
   .desc1{
-    margin-left: 16%;
+    // margin-left: 16%;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -247,6 +248,21 @@ import Bottom from "@/components/Bottom.vue";
     padding: 0 3.125rem;
     border: none;
     border-radius: .25rem;
+  }
+}
+@media screen and (max-width:2000px) {
+  .mu_box{
+    padding: 0 24rem;
+  }
+}
+@media screen and (max-width:1500px) {
+  .mu_box{
+    padding: 0 12rem;
+  }
+}
+@media screen and (max-width:991px) {
+  .mu_box{
+    padding: 0 1rem;
   }
 }
 </style>
