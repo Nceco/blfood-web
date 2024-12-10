@@ -9,7 +9,9 @@ import Bottom from "@/components/Bottom.vue";
     </div>
     <div class="content">
       <div class="item">
-        <div class="item_img"/>
+        <div class="item_img">
+          <img src="@/assets/1.jpg" alt="1.jpg" class="img-fluid-1">
+        </div>
         <div class="item_text">
           <h2 class="item_text_title">インバウンド集客支援</h2>
           <p>訪日外国人観光客、特に中華圏のお客様をターゲットにした効果的なマーケティング施策を提供します。飲食店様、宿泊施設様、サービス業事業主様向けに、以下のサービスをトータルサポートします。</p>
@@ -22,7 +24,9 @@ import Bottom from "@/components/Bottom.vue";
         </div>
       </div>
       <div class="item">
-        <div class="item_img"/>
+        <div class="item_img">
+          <img src="@/assets/2.jpg" alt="2.jpg" class="img-fluid-1">
+        </div>
         <div class="item_text">
           <h2 class="item_text_title">
             <span>飲食店向け管理システムの開発・販売</span>
@@ -45,7 +49,9 @@ import Bottom from "@/components/Bottom.vue";
         </div>
       </div>
       <div class="item">
-        <div class="item_img"/>
+        <div class="item_img">
+          <img src="@/assets/3.jpg" alt="3.jpg" class="img-fluid-1">
+        </div>
         <div class="item_text">
           <h2 class="item_text_title">
             <span>多言語対応の海外OTA予約サイト運用代行サービス</span>
@@ -74,7 +80,9 @@ import Bottom from "@/components/Bottom.vue";
         </div>
       </div>
       <div class="item">
-        <div class="item_img"/>
+        <div class="item_img">
+          <img src="@/assets/4.jpg" alt="4.jpg" class="img-fluid-1">
+        </div>
         <div class="item_text">
           <h2 class="item_text_title">日本市場向けの中国OTA販売コンサルティング</h2>
           <p>
@@ -84,7 +92,9 @@ import Bottom from "@/components/Bottom.vue";
         </div>
       </div>
       <div class="item">
-        <div class="item_img"/>
+        <div class="item_img">
+          <img src="@/assets/5.jpg" alt="5.jpg" class="img-fluid-1">
+        </div>
         <div class="item_text">
           <h2 class="item_text_title">
             <span>プレミアム旅行商品の企画・販売</span>
@@ -122,7 +132,7 @@ import Bottom from "@/components/Bottom.vue";
     }
   }
   .content{
-    padding: 0 12rem;
+    padding: 0 14rem;
     .item{
       display: flex;
       flex-direction: row;
@@ -137,13 +147,16 @@ import Bottom from "@/components/Bottom.vue";
       }
       &_img{
         flex: 1;
-        // width: 450px;
-        height: 420px;
-        background: #e8ebee;
+        margin-top: 2.8rem;
         cursor: pointer;
         transition: .3s;
-        &:hover{
-          box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2);
+        .img-fluid-1{
+          width: 100%;
+          height: auto;
+          border: 1px solid #e5e5e5;
+          &:hover{
+            box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2);
+          }
         }
       }
       &_text{
@@ -207,10 +220,9 @@ import Bottom from "@/components/Bottom.vue";
           font-weight: 400;
         }
         &_img{
+          margin-top: 0;
           flex: none;
           width: calc(100vw - 2rem);
-          height: 224px;
-          background: #e8ebee;
           cursor: pointer;
           transition: .3s;
           &:hover{

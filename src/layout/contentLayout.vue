@@ -24,7 +24,8 @@ watch(route,() => currentRoute.value = route.fullPath)
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <div class="logo" @click="goToHome">
-            <span class="logo_title">Bridge Land</span>
+          <img src="@/assets/logo.png" alt="logo" width="32" height="32" />
+          <span class="logo_title">Bridge Land</span>
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -46,11 +47,18 @@ watch(route,() => currentRoute.value = route.fullPath)
 
 <style scoped lang="less">
 @import "../global.less";
+.container-fluid .logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
 .container-fluid .logo .logo_title{
   font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;
   color: @primary_color;
+  margin-left: .5rem;
 }
 
 .navbar{

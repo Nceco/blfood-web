@@ -93,3 +93,14 @@ export const ABOUT_SUB_MENU = [
         path: '/about/company'
     },
 ]
+
+export const ACHIEVE_SUB_MENU = [
+    {
+        name: '導入事例',
+        path: '/achievement'
+    },
+    {
+        name: 'パートナー',
+        path: '/achievement/message'
+    }
+]

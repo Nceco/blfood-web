@@ -56,6 +56,20 @@ export const routes = [
                 path:'/achievement',
                 name:'achievement',
                 component: () => import('@/views/achievement/index.vue'),
+                children:[
+                    {
+                        path: '',
+                        name: 'achievement1',
+                        component: () => import('@/views/achievement/daoru/index.vue'),
+                        parent: 'achievement'
+                    },
+                    {
+                        path: 'message',
+                        name: 'achievement2',
+                        component:  () => import('@/views/achievement/daoru1/index.vue'),
+                        parent: 'achievement'
+                    }
+                ]
             },
             {
                 path:'/qa',

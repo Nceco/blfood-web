@@ -127,6 +127,8 @@ import Bottom from "@/components/Bottom.vue";
     }
   }
   .content{
+    width: 70%;
+    margin: 0 auto;
     p{
         margin: 0;
       }
@@ -156,7 +158,7 @@ import Bottom from "@/components/Bottom.vue";
           border: 1px solid @primary_color;
           color: @primary_color;
           font-size: .8125rem;
-          margin-left: 1rem;
+          margin-left: 1.5rem;
         }
       }
       &:hover{
@@ -165,7 +167,7 @@ import Bottom from "@/components/Bottom.vue";
       &_3{
         flex: 1;
         font-size: .9375rem;
-        margin-left: .5rem;
+        margin-left: 4rem;
       }
     }
   }
@@ -173,6 +175,9 @@ import Bottom from "@/components/Bottom.vue";
 @media screen and (max-width:1800px) {
   .mu_box{
     padding: 0 6rem;
+    .content{
+      width: 100%;
+    }
   }
 }
 @media screen and (max-width:991px) {
@@ -198,6 +203,7 @@ import Bottom from "@/components/Bottom.vue";
       }
     }
     .content{
+      width: 100%;
       p{
           margin: 0;
         }

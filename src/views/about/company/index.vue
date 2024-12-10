@@ -81,6 +81,8 @@
     }
   }
   .content{
+    width: 60%;
+    margin: 0 auto;
     .item{
       display: flex;
       flex-direction: row;
@@ -95,6 +97,7 @@
       &_2{
         padding: 20px 0;
         font-size: 0.9375rem;
+
       }
     }
   }
@@ -102,6 +105,14 @@
 @media screen and (max-width:1500px) {
   .mu_box{
     padding: 0 6rem;
+  }
+}
+@media screen and (max-width:1800px) {
+  .mu_box{
+    padding: 0 6rem;
+    .content{
+      width: 80%;
+    }
   }
 }
 @media screen and (max-width:991px) {
@@ -125,6 +136,8 @@
       }
     }
     .content{
+      width: 100%;
+      margin: 0 auto;
       .item{
         display: flex;
         flex-direction: column;
