@@ -70,7 +70,7 @@ const handleNavClick = item => router.replace(item.path)
 
 @media screen and (max-width:991px) {
   .layout_bottom{
-    padding-top: 48px;
+    padding-top: 1rem;
     .nav{
       margin-top: 1rem;
       display: flex;
