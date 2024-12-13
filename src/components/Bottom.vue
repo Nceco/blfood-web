@@ -11,6 +11,7 @@ const handleNavClick = item => router.replace(item.path)
 <template>
   <div class="layout_bottom">
     <div class="img">
+      <img src="@/assets/bottom.gif" alt="bottom.gif" />
     </div>
     <div class="nav">
       <div
@@ -33,8 +34,12 @@ const handleNavClick = item => router.replace(item.path)
   padding-top: 160px;
   .img{
     width: 100%;
-    height: 200px;
-    background: aliceblue;
+    //background: aliceblue;
+    img{
+      width: 100%;
+      height: auto;
+      //min-height: 80px;
+    }
   }
   .nav{
     margin-top: 2rem;
