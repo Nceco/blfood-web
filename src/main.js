@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import {Button,Form,FormItem,Radio,RadioGroup,Textarea,Input,ConfigProvider} from 'ant-design-vue'
+import {Form,FormItem,Radio,RadioGroup,Textarea,Input,ConfigProvider} from 'ant-design-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.bundle'
 import App from './App.vue'
@@ -7,7 +7,6 @@ import router from './router'
 
 createApp(App)
     .use(router)
-    .use(Button)
     .use(Form)
     .use(FormItem)
     .use(Radio)
