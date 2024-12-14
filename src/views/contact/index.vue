@@ -1,124 +1,102 @@
 <script setup>
+import {reactive,ref} from 'vue'
 import Bottom from "@/components/Bottom.vue";
+const formRef = ref()
+const formState = reactive({
+  name1: '',
+  name2: '',
+  name3: '',
+  name4: '',
+  name5: '',
+  phone: '',
+  desc: '',
+  resource: '1'
+});
+const onSubmit = async () => {
+  await formRef.value.validateFields()
+};
+const emailValidator = async (_rule, value) => {
+  if(!(/^[^@]+@[^@]+\.[^@]+$/.test(value))){
+    return Promise.reject('メールアドレスが未記入、またはメールアドレスの形式と異なります。');
+  }
+  return Promise.resolve();
+}
 </script>
 <template>
-  <div class="mu_box">
-    <div class="mu_container">
-      <div class="header">
-        <span class="span1">CONTACT</span>
-        <span class="span2">お問い合わせ</span>
-      </div>
-      <p class="desc">下記項目にご入力いただき、個人情報の取り扱いにご同意の上、送信してください。</p>
-      <div class="desc1">
-        <p>※ 営業目的でのお問い合わせは一切受け付けておりません。</p>
-        <p>※ 一般のお客様からの個別のご予約についての質問・変更・キャンセルは、弊社では対応いたしかねます。予約をされたお店に直接ご連絡をお願いいたします。</p>
-        <p>Notice: To change or cancel your reservation, please contact the restaurant directly.</p>
-      </div>
-      <div class="content">
-        <div class="contactForm__item">
-          <label class="contactForm__label">
-            <span class="contactForm__labelTitle">会社名</span>
-            <input type="text" id="company_name" name="company_name" size="60" placeholder="株式会社トレタ">
-          </label>
+  <a-config-provider
+      :theme="{
+        token: {
+          colorPrimary: '#0169B9',
+        },
+      }"
+  >
+    <div class="mu_box">
+      <div class="mu_container">
+        <div class="header">
+          <span class="span1">CONTACT</span>
+          <span class="span2">お問い合わせ</span>
         </div>
-        <div class="contactForm__item">
-          <label class="contactForm__label">
-            <span class="contactForm__labelTitle">部署</span>
-            <input type="text" id="department" name="department" size="60" placeholder="営業部">
-          </label>
+        <p class="desc">下記項目にご入力いただき、個人情報の取り扱いにご同意の上、送信してください。</p>
+        <div class="desc1">
+          <p>※ 営業目的でのお問い合わせは一切受け付けておりません。</p>
+          <p>※ 一般のお客様からの個別のご予約についての質問・変更・キャンセルは、弊社では対応いたしかねます。予約をされたお店に直接ご連絡をお願いいたします。</p>
+          <p>Notice: To change or cancel your reservation, please contact the restaurant directly.</p>
         </div>
-        <div class="contactForm__item form-group has-error has-danger">
-          <label class="contactForm__label">
-            <span class="contactForm__labelTitle control-label">お名前</span>
-            <span class="contactForm__requireMark">[必須]</span>
-            <input type="text" id="inquirer_name" name="inquirer_name" class="form-control" size="60" placeholder="三方　良子" data-error="お名前が未記入です。" required="">
-          </label>
-          <div class="contactForm__errorText help-block with-errors" v-if="false"><ul class="list-unstyled"><li>お名前が未記入です。</li></ul></div>
-        </div>
-        <div class="contactForm__item form-group has-error has-danger">
-          <label class="contactForm__label">
-            <span class="contactForm__labelTitle control-label">ふりがな</span>
-            <span class="contactForm__requireMark">[必須]</span>
-            <input type="text" id="inquirer_name_kana" name="inquirer_name_kana" class="form-control" size="60" placeholder="さんぽう よしこ" data-error="ふりがなが未記入です。" required="">
-          </label>
-          <div class="contactForm__errorText help-block with-errors" v-if="false"><ul class="list-unstyled"><li>ふりがなが未記入です。</li></ul></div>
-        </div>
-        <div class="contactForm__item form-group has-error has-danger">
-          <label class="contactForm__label">
-            <span class="contactForm__labelTitle control-label">メールアドレス</span>
-            <span class="contactForm__requireMark">[必須]</span>
-            <input type="email" id="mail_address" name="mail_address" class="form-control" size="60" placeholder="info@toreta.in" data-error="メールアドレスが未記入、またはメールアドレスの形式と異なります。" required="">
-          </label>
-          <div class="contactForm__errorText help-block with-errors" v-if="false"><ul class="list-unstyled"><li>メールアドレスが未記入、またはメールアドレスの形式と異なります。</li></ul></div>
-        </div>
-        <div class="contactForm__item form-group">
-          <label class="contactForm__label control-label">
-            <span class="contactForm__labelTitle">電話番号</span>
-            <input type="tel" id="phone_number" name="phone_number" size="60" placeholder="03-6431-9006">
-          </label>
-        </div>
-        <div class="contactForm__item form-group">
-          <label class="contactForm__label">
-            <span class="contactForm__labelTitle trol-label">お問い合わせ種別</span>
-            <span class="contactForm__requireMark">[必須]</span>
-          </label>
-          <span class="radio-field horizontal-item">
-          <label>
-            <input type="radio" name="inquiry_type" value="サービスについて" checked="checked" required="">
-            <span class="radio-field-text">サービスについて</span>
-          </label>
-        </span>
-          <span class="radio-field horizontal-item">
-          <label>
-            <input type="radio" name="inquiry_type" value="代理店ご希望" required="">
-            <span class="radio-field-text">代理店ご希望</span>
-          </label>
-        </span>
-          <span class="radio-field horizontal-item">
-          <label>
-            <input type="radio" name="inquiry_type" value="協業について" required="">
-            <span class="radio-field-text">協業について</span>
-          </label>
-        </span>
-          <span class="radio-field horizontal-item">
-          <label>
-            <input type="radio" name="inquiry_type" value="取材について" required="">
-            <span class="radio-field-text">取材について</span>
-          </label>
-        </span>
-          <span class="radio-field horizontal-item">
-          <label>
-            <input type="radio" name="inquiry_type" value="採用について" required="">
-            <span class="radio-field-text">採用について</span>
-          </label>
-        </span>
-          <span class="radio-field horizontal-item">
-          <label>
-            <input type="radio" name="inquiry_type" value="その他" required="">
-            <span class="radio-field-text">その他</span>
-          </label>
-        </span>
-        </div>
-        <div class="contactForm__item form-group has-error has-danger">
-          <label class="contactForm__label">
-            <span class="contactForm__labelTitle control-label">お問い合わせ内容</span>
-            <span class="contactForm__requireMark">[必須]</span>
-            <textarea id="inquiry_description" name="inquiry_description" cols="50" rows="5" data-error="お問い合わせ内容が未記入です。" required=""></textarea>
-          </label>
-          <div class="contactForm__errorText help-block with-errors" v-if="false"><ul class="list-unstyled"><li>お問い合わせ内容が未記入です。</li></ul></div>
-        </div>
-        <div class="contactForm__submit">
-          <button type="submit" name="送信する" value="send" class="btn ripple center-block disabled">送信する</button>
+        <div class="content">
+          <a-form
+              :model="formState"
+              layout="vertical"
+              size="large"
+              ref="formRef"
+          >
+            <a-form-item label="会社名" name="name1">
+              <a-input v-model:value="formState.name1" />
+            </a-form-item>
+            <a-form-item label="部署" name="name2">
+              <a-input v-model:value="formState.name2" />
+            </a-form-item>
+            <a-form-item label="お名前" name="name3" :rules="[{ required: true, message: 'お名前が未記入です。' }]">
+              <a-input v-model:value="formState.name3"/>
+            </a-form-item>
+            <a-form-item label="ふりがな" name="name4" :rules="[{ required: true, message: 'ふりがなが未記入です。' }]">
+              <a-input v-model:value="formState.name4" />
+            </a-form-item>
+            <a-form-item
+                label="メールアドレス"
+                name="name5"
+                :rules="[{ required: true,validator:emailValidator}]">
+              <a-input v-model:value="formState.name5"/>
+            </a-form-item>
+            <a-form-item label="電話番号" name="phone">
+              <a-input v-model:value="formState.phone"/>
+            </a-form-item>
+            <a-form-item label="お問い合わせ種別" name="resource" :rules="[{ required: true, message: 'メールアドレスが未記入、またはメールアドレスの形式と異なります。' }]">
+              <a-radio-group v-model:value="formState.resource">
+                <a-radio value="1">サービスについて</a-radio>
+                <a-radio value="2">代理店ご希望</a-radio>
+                <a-radio value="3">協業について</a-radio>
+                <a-radio value="4">取材について</a-radio>
+                <a-radio value="5">採用について</a-radio>
+                <a-radio value="6">その他</a-radio>
+              </a-radio-group>
+            </a-form-item>
+            <a-form-item label="お問い合わせ内容 " name="desc" :rules="[{ required: true, message: 'お問い合わせ内容が未記入です。' }]">
+              <a-textarea v-model:value="formState.desc" />
+            </a-form-item>
+          </a-form>
+          <div class="form_footer">
+            <button @click="onSubmit">送信する</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </a-config-provider>
   <Bottom/>
 </template>
 <style scoped lang="less">
 @import "../../global.less";
 .mu_box{
-  padding: 0 36rem;
+  padding: 0 48rem;
   .mu_container{
     margin: 0 auto;
   }
@@ -147,10 +125,8 @@ import Bottom from "@/components/Bottom.vue";
     line-height: 1.875rem;
     font-size: 14px;
     text-align: center;
-    // margin-left: 16%;
   }
   .desc1{
-    // margin-left: 16%;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -159,96 +135,49 @@ import Bottom from "@/components/Bottom.vue";
     font-size: 14px;
   }
   .content{
-    .contactForm__item{
-      margin-bottom: 2rem;
+    margin: 0 auto;
+    :deep(.ant-form-item-control-input .ant-form-item-control-input-content .ant-radio-group){
+      display: flex;
+      flex-direction: column;
     }
-    .contactForm__label{
-      display: block;
-      font-size: 1rem;
-      font-weight: 400;
-      max-width: 100%;
-      margin-bottom: 5px;
+    :deep(.ant-form-item-control-input .ant-form-item-control-input-content .ant-radio-group .ant-radio-wrapper:not(:first-child)){
+      margin-top: .5rem;
     }
-    .contactForm__labelTitle{
+    :deep(.ant-form-item .ant-form-item-label >label){
+      color: #333;
+    }
+    :deep(.ant-radio-wrapper span){
+      color: #333;
+    }
+    :deep(input){
+      height: 48px;
+    }
+    :deep(.ant-form-item .ant-form-item-label >label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before){
       display: inline-block;
-      padding-bottom: .25em;
+      margin-inline-end: 4px;
+      color: #ff4d4f;
+      font-size: 14px;
+      font-family: SimSun, sans-serif;
+      line-height: 1;
+      content: "[必須]";
     }
-    .contactForm__item input, .contactForm__item select, .contactForm__item textarea {
-      display: block;
-      background: #fff;
-      width: 100%;
-      border-radius: .25rem;
-      border: 1px solid #d3d3d3;
-      height: 3rem;
-      line-height: 3rem;
-      padding: 0 .875rem;
-      font-size: 1rem;
+    .form_footer{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1rem;
+      button{
+        font-size: .9375rem;
+        color: #fff;
+        background: @primary_color;
+        line-height: 3rem;
+        padding: 0 3.125rem;
+        border: none;
+        border-radius: .25rem;
+      }
     }
   }
-  .help-block {
-    display: block;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    color: #737373;
-  }
-  .contactForm__requireMark {
-    margin-left: .375rem;
-    color: #ff5040;
-  }
-  .form-control {
-    width: 100%;
-    height: 34px;
-    padding: 6px 12px;
-    background-color: #fff;
-    background-image: none;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-  }
-  .has-error .form-control {
-    border-color: #a94442;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-  }
-  .list-inline, .list-unstyled {
-    padding-left: 0;
-    list-style: none;
-  }
 
-  ol, ul {
-    margin: 0;
-    padding: 0;
-  }
-
-  .contactForm__item .radio-field {
-    display: block;
-    font-weight: 400;
-    margin-bottom: .3125rem;
-  }
-  .contactForm__item .radio-field-text {
-    vertical-align: middle;
-  }
-  .contactForm__item input[type=checkbox], .contactForm__item input[type=radio] {
-    display: inline-block;
-    width: 1rem;
-    height: 1rem;
-  }
-
-  .contactForm__item textarea {
-    height: 10rem !important;
-  }
-  .contactForm__submit {
-    text-align: center;
-  }
-  .contactForm__submit>button {
-    font-size: .9375rem;
-    color: #fff;
-    background: @primary_color;
-    line-height: 3rem;
-    padding: 0 3.125rem;
-    border: none;
-    border-radius: .25rem;
-  }
 }
 @media screen and (max-width:2000px) {
   .mu_box{

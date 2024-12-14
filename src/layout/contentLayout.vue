@@ -10,10 +10,12 @@ const menu = ref(LAYOUT_MENU)
 const currentRoute = ref('news')
 const goToHome = () => router.push('/')
 const handleNavClick = (item) => {
+  const nav_element =  document.getElementById('navbarNav')
   currentRoute.value = item.path
   router.push({
     path: item.path
   })
+  nav_element.classList.remove('show')
 }
 onMounted(() => {currentRoute.value = route.fullPath})
 watch(route,() => currentRoute.value = route.fullPath)
@@ -68,6 +70,7 @@ watch(route,() => currentRoute.value = route.fullPath)
   width: 100vw;
   background-color: #fff !important;
   box-shadow: 0 10px 10px -10px rgba(0, 0, 0, .07);
+  z-index: 999;
 }
 
 .navbar-collapse{
@@ -122,7 +125,16 @@ watch(route,() => currentRoute.value = route.fullPath)
   }
   .current{
     &:after,&:before{
-      width: 50%;
+      width: 0;
+    }
+  }
+}
+@media screen and (max-width: 991px) {
+  .nav-item{
+    &:hover{
+      &::after,&::before{
+        width: 0;
+      }
     }
   }
 }

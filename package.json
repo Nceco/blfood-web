@@ -12,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "ant-design-vue": "4.x",
     "bootstrap": "^5.3.3",
     "less": "^4.2.1",
     "less-loader": "^12.2.0",
