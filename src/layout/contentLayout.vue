@@ -12,6 +12,7 @@ const goToHome = () => router.push('/')
 const handleNavClick = (item) => {
   const nav_element =  document.getElementById('navbarNav')
   currentRoute.value = item.path
+  console.log(currentRoute.value)
   router.push({
     path: item.path
   })
@@ -125,7 +126,7 @@ watch(route,() => currentRoute.value = route.fullPath)
   }
   .current{
     &:after,&:before{
-      width: 0;
+      width: 50%;
     }
   }
 }

@@ -3,6 +3,12 @@ import { ref } from 'vue'
 import { useRouter } from "vue-router";
 import { LAYOUT_MENU } from "@/utils/common.js";
 
+defineProps({
+  showImage: {
+    type: Boolean,
+    default: true
+  }
+})
 const router = useRouter()
 
 const menu = ref(LAYOUT_MENU)
@@ -10,7 +16,7 @@ const handleNavClick = item => router.replace(item.path)
 </script>
 <template>
   <div class="layout_bottom">
-    <div class="img">
+    <div class="img" v-if="showImage">
       <img src="@/assets/bottom.gif" alt="bottom.gif" />
     </div>
     <div class="nav">

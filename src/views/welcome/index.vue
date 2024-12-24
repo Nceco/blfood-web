@@ -36,14 +36,18 @@ const handleNavClick = item => {
       </div>
     </nav>
     <div class="content">
-      <h1>首页内容</h1>
+      <img src="@/assets/home_logo.jpg" alt="logo" class="home_logo"/>
     </div>
-    <Bottom/>
+    <Bottom :show-image="false"/>
   </div>
 </template>
 
 <style scoped lang="less">
 @import "../../global.less";
+.home_logo{
+  width: 100%;
+  height: auto;
+}
 .container-fluid .logo{
   display: flex;
   align-items: center;
@@ -107,10 +111,11 @@ const handleNavClick = item => {
 .mu_contanier{
     padding-top: 56px;
 }
+
 .content{
-  padding: 1rem 2.5rem 0;
-  height: 100vh;
+  margin-bottom: 0;
 }
+
 @media screen and (min-width:991px) {
   .container-fluid{
     padding: 0 2.5rem;
@@ -120,6 +125,9 @@ const handleNavClick = item => {
   }
   .mu_contanier{
     padding-top: 6rem;
+  }
+  .content{
+    margin-bottom: -160px;
   }
 }
 </style>
