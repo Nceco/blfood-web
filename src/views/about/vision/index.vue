@@ -4,7 +4,7 @@
   <div class="mu_box">
     <section class="mu_header">
       <p class="span1">VISION</p>
-      <p class="title">日本を訪れる人々と日本全国を元気にする架け橋となる</p>
+      <p class="title">旅で創る、元気と未来！</p>
     </section>
     <div class="content">
       <p>私たちは、訪日観光客と日本の事業者様をつなぐ架け橋として、訪日観光客に最高の体験を提供し、事業者様の持続的な成長実現をサポートいたします。</p>
