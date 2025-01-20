@@ -10,9 +10,21 @@ import Bottom from "@/components/Bottom.vue";
     <div class="content">
       <div class="item">
         <div class="item_1">
-          <strong>【募集ポジション】</strong>
+          <strong>【職種】</strong>
         </div>
-        <div class="item_2">カスタマーサクセス</div>
+        <div class="item_2">フィールドセールス</div>
+      </div>
+      <div class="item">
+        <div class="item_1">
+          <strong>【仕事内容】</strong>
+        </div>
+        <div class="item_2">
+          インバウンド市場の拡大に伴い、訪日外国人観光客と日本の事業者様をつなぐ多様なソリューション提案をお任せいたします。<br/>
+          １、飲食店・宿泊施設様向けインバウンド集客支援サービスの提案営業 └ 中国SNS運用代行やメディア広告など、多様な集客支援サービスの提案<br/>
+          ２、飲食店様向け自社開発インバウンド対応システムの提案営業 └ 順番待ち・モバイルオーダー・セルフ決済をワンストップで提供する最新システムの導入提案<br/>
+          ３、宿泊施設様向け海外OTAサイト運用代行サービスの提案・導入サポート └ CtripやBooking.comなどの運用代行で、集客力向上と業務効率化をサポート<br/>
+          ※ご経験・ご希望に応じて、1つの業務に専念することも、複数の業務に挑戦することも可能です！
+        </div>
       </div>
       <div class="item">
         <div class="item_1">
@@ -26,26 +38,42 @@ import Bottom from "@/components/Bottom.vue";
         </div>
         <div class="item_2">
           想定月給30万円〜<br/>
-          ※別途、給与規定に従い、割増手当（深夜勤務手当・休日出勤手当・超過勤務手当）を支給します。<br/>
-          ※給与改定について<br/>
-          定期賃金改定：年2回<br/>
-          評価制度をもとに1月と7月に実施
+          ※別途、給与規定に基づき割増手当（深夜勤務・休日出勤・超過勤務）支給<br/>
+          ※年2回の定期賃金改定（1月・7月、評価制度に基づく）
         </div>
       </div>
       <div class="item">
         <div class="item_1">
           <strong>【勤務地】</strong>
         </div>
-        <div class="item_2">東京、大阪</div>
+        <div class="item_2">東京／大阪</div>
+      </div>
+      <div class="item">
+        <div class="item_1">
+          <strong>【応募資格】</strong>
+        </div>
+        <div class="item_2">
+          ・営業経験（業界不問）歓迎<br/>
+          ・旅行・外食に興味がある方<br/>
+          ・英語・中国語スキルを活かしたい方、さらに伸ばしたい方歓迎
+        </div>
+      </div>
+      <div class="item">
+        <div class="item_1">
+          <strong>【福利厚生】</strong>
+        </div>
+        <div class="item_2">
+          ・各種社会保険完備<br/>
+          ・交通費全額支給<br/>
+          ・賞与年2回（業績による）<br/>
+          ・社内イベント・研修制度あり
+        </div>
       </div>
       <div class="item">
         <div class="item_1">
           <strong>【応募方法】</strong>
         </div>
-        <div class="item_2">
-          お問い合わせフォームよりご応募ください。<br/>
-          ※履歴書・職務経歴書のご提出をお願いします。
-        </div>
+        <div class="item_2">エントリーフォームよりご応募ください。</div>
       </div>
     </div>
   </div>
@@ -88,7 +116,7 @@ import Bottom from "@/components/Bottom.vue";
       &_2{
         padding: 20px 0;
         font-size: 0.9375rem;
-
+        flex: 1;
       }
     }
   }
