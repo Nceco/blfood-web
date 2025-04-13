@@ -57,7 +57,6 @@ import Bottom from "@/components/Bottom.vue";
               海外OTAサイトの運用を全面サポートし、施設様の集客力と収益力を最大化いたします。
             </span>
           </h2>
-          <br/>
           <p>① 効果的な集客</p>
           <p>Booking.comやCtrip（現Trip.com）など主要海外OTAを活用し、インバウンド需要を的確に捉えた集客戦略を展開いたします。</p>
           <br/>
