@@ -10,6 +10,13 @@ import Bottom from "@/components/Bottom.vue";
     <div class="content">
       <div class="item">
         <div class="items">
+          <p class="item_1">2025年2月</p>
+          <p class="item_2">「プレスリリース」</p>
+        </div>
+        <p class="item_3">中国民泊運営会社爱彼邻と業務提携</p>
+      </div>
+      <div class="item">
+        <div class="items">
           <p class="item_1">2024年10月</p>
           <p class="item_2">「プレスリリース」</p>
         </div>
