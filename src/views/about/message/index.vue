@@ -7,6 +7,7 @@
       <span class="span2">代表あいさつ</span>
     </div>
     <div class="content">
+      <img src="@/assets/bg.jpg" alt="bg.jpg" class="img-bg">
       <p>私は、かつて農業高校の実習教員として、日本の農業教育に携わっておりました。現場で多くの課題に直面し、「教育だけでは限界がある。現場の仕組みそのものを変えなければならない」という思いが日に日に強くなりました。</p>
       <p>その想いから教員を辞め、大先輩のご指導のもと、農業の課題解決を目指して食肉ビジネスを立ち上げました。</p>
       <p>しかし、飲食店やさまざまな施設との関わりの中で、日本の豊かな食文化や美しい風景、歴史といった誇るべき資源が、国内市場だけでは十分に活かされていないことに気づきました。</p>
@@ -39,6 +40,13 @@
   }
   .content{
     text-align: left;
+    .img-bg{
+      float: left;
+      width: 200px;
+      height: 250px;
+      margin-right: 10px;
+      // height: 100px;
+    }
     p{
       line-height: 1.875rem;
       font-size: 0.9375rem;
