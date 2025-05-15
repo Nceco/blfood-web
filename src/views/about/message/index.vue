@@ -43,9 +43,7 @@
     .img-bg{
       float: left;
       width: 200px;
-      height: 250px;
       margin-right: 10px;
-      // height: 100px;
     }
     p{
       line-height: 1.875rem;
